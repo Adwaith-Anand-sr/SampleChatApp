@@ -30,10 +30,16 @@ io.on('connection', (socket) => {
   });
 });
 
-// Start the server
-const PORT = process.env.PORT || 4000;
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+
+
+server.on('error', (error) => {
+    console.error('Server error:', error);
 });
 
+// const PORT = process.env.PORT || 4000;
+// server.listen(PORT, () => {
+//  console.log(`Server running on port ${PORT}`);
+// });
 
+
+module.exports = server;
