@@ -22,7 +22,7 @@ server.on('error', (error) => {
     console.error('Server error:', error);
 });
 
-const PORT = 443; // HTTPS default port
+const PORT = 8443; // HTTPS default port
 
 server.listen(PORT, () => {
     console.log(`AppServer running on port ${PORT}`);
