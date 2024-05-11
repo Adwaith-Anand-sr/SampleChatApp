@@ -14,8 +14,12 @@ const server = https.createServer({
     cert: fs.readFileSync(path.join(__dirname, './certificates', 'cert.pem'))
 }, app);
 
-const PORT = 8443; // HTTPS default port
-
-server.listen(PORT, () => {
-    console.log(`AppServer running on port ${PORT}`);
+server.on('error', (error) => {
+    console.error('Server error:', error);
 });
+
+// const PORT = 8443; // HTTPS default port
+
+// server.listen(PORT, () => {
+//     console.log(`AppServer running on port ${PORT}`);
+// });
