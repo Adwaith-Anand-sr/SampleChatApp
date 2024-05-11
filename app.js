@@ -2,8 +2,12 @@ const express = require('express');
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
+const http = require("http");
+
 
 const app = express();
+
+
 
 app.get("/", (req, res)=>{
    res.send("helloeoe")
@@ -18,8 +22,10 @@ server.on('error', (error) => {
     console.error('Server error:', error);
 });
 
-// const PORT = 8443; // HTTPS default port
+const PORT = 443; // HTTPS default port
 
-// server.listen(PORT, () => {
-//     console.log(`AppServer running on port ${PORT}`);
-// });
+server.listen(PORT, () => {
+    console.log(`AppServer running on port ${PORT}`);
+});
+
+module.exports = server 
