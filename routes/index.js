@@ -8,7 +8,7 @@ const httpServer = createServer();
 const io = new Server(httpServer, {
    cors:{
       // origin: "http://localhost:3000"
-      origin: "https://samplechatapp-wzz2.onrender.com:3000"
+      origin: "https://samplechatapp-wzz2.onrender.com"
    }
 });
 
